@@ -8,20 +8,20 @@
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+  <body class="bg-gray-100 text-gray-800">
+    <div id="unity-container" class="unity-desktop max-w-4xl mx-auto p-4 bg-white shadow-lg rounded-lg">
+      <canvas id="unity-canvas" width=960 height=600 tabindex="-1" class="border border-gray-300 rounded-md"></canvas>
+      <div id="unity-loading-bar" class="mt-4">
+        <div id="unity-logo" class="mb-2"></div>
+        <div id="unity-progress-bar-empty" class="w-full bg-gray-200 rounded-full h-2.5">
+          <div id="unity-progress-bar-full" class="bg-blue-600 h-2.5 rounded-full"></div>
         </div>
       </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title" class="text-2xl font-bold">Shattered Department ers..</div>
+      <div id="unity-warning" class="mt-4 text-center text-red-600 font-semibold"></div>
+      <div id="unity-footer" class="mt-4 flex justify-between items-center">
+        <div id="unity-logo-title-footer" class="text-lg font-semibold"></div>
+        <button id="unity-fullscreen-button" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Fullscreen</button>
+        <div id="unity-build-title" class="text-2xl font-bold">Shattered Department</div>
       </div>
     </div>
     <script>
@@ -122,6 +122,14 @@
             };
 
       document.body.appendChild(script);
+
+      // Add hover effect to the fullscreen button
+      document.querySelector('#unity-fullscreen-button').addEventListener('mouseover', function() {
+        this.classList.add('bg-blue-700');
+      });
+      document.querySelector('#unity-fullscreen-button').addEventListener('mouseout', function() {
+        this.classList.remove('bg-blue-700');
+      });
 
     </script>
   </body>
